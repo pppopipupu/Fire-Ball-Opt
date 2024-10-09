@@ -2,14 +2,17 @@ package com.pppopipupu.fbop.mixin;
 
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 import zone.rong.mixinbooter.IEarlyMixinLoader;
+import zone.rong.mixinbooter.ILateMixinLoader;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+@IFMLLoadingPlugin.MCVersion("1.12.2")
 
-public class MixinEarly implements IEarlyMixinLoader , IFMLLoadingPlugin {
+@IFMLLoadingPlugin.Name("FireBallASM")
+public class MixinEarly implements  IEarlyMixinLoader, IFMLLoadingPlugin {
     @Override
     public List<String> getMixinConfigs() {
         return new ArrayList<>(Collections.singletonList("mixins.fbop.json"));
